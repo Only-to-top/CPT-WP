@@ -54,7 +54,7 @@ function ^^^^^_taxonomies(){
         'new_item_name' => 'Название новой категории ^^^^^',
         'menu_name' => 'Категории',
     );
-    register_taxonomy('accessories', array('^^^^^'), array( // post_type name (см. выше)
+    register_taxonomy('accessories', array('^^^^^'), array( // array = post_type name (см. выше) - taxonomy 'accessories'
         'hierarchical' => true,
         'labels' => $labels,
         'show_ui' => true,
