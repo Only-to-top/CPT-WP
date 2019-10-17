@@ -6,7 +6,7 @@
 // New post type - name
 add_action( 'init', 'register_post_types_name' );
 function register_post_types_name(){
-    register_post_type('post_type_name', array(
+    register_post_type('postTypeName', array(
         'label'  => null,
         'labels' => array(
             'name'               => '______', // основное название для типа записи
