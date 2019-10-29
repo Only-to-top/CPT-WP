@@ -32,6 +32,10 @@ function register_post_types_name(){
         'hierarchical'        => false,
         'supports'            => [ 'title', 'editor', 'thumbnail' ], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies' => [],
+        /*'taxonomies' => [
+            'post_tag', // метки
+            'category'  // рубрики
+        ],*/
         'has_archive'         => false,
         'rewrite'             => true,
         'query_var'           => true,
