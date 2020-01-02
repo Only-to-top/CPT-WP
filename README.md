@@ -42,28 +42,28 @@ function register_post_types_name(){
     ) );
 }
 
-// Создаем новую таксономию для ^^^^^
-add_action( 'init', '^^^^^_taxonomies', 0 );
-function ^^^^^_taxonomies(){
+// Создаем новую таксономию для ______
+add_action( 'init', '_______taxonomies', 0 );
+function _______taxonomies(){
     $labels = array(
-        'name' => 'Категории ^^^^^',
-        'singular_name' => 'Категория ^^^^^',
-        'search_items' =>  'Найти категорию ^^^^^',
-        'all_items' => 'Все категории ^^^^^',
-        'parent_item' => 'Родительская категория ^^^^^',
+        'name' => 'Категории ______',
+        'singular_name' => 'Категория ______',
+        'search_items' =>  'Найти категорию ______',
+        'all_items' => 'Все категории ______',
+        'parent_item' => 'Родительская категория ______',
         'parent_item_colon' => 'Родительская категория',
         'edit_item' => 'Родительская категория',
         'update_item' => 'Обновить категорию',
         'add_new_item' => 'Добавить новую категорию',
-        'new_item_name' => 'Название новой категории ^^^^^',
+        'new_item_name' => 'Название новой категории ______',
         'menu_name' => 'Категории',
     );
-    register_taxonomy('accessories', array('^^^^^'), array( // array = post_type name (см. выше) - taxonomy 'accessories'
+    register_taxonomy('accessories', array('______'), array( // array = post_type name (см. выше) - taxonomy 'accessories'
         'hierarchical' => true,
         'labels' => $labels,
         'show_ui' => true,
         'query_var' => true,
-        'rewrite' => array( 'slug' => '^^^' ),
+        'rewrite' => array( 'slug' => '______' ),
     ));
 }
 ```
