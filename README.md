@@ -21,32 +21,26 @@ function register_post_type_services(){
             'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
             'menu_name'          => 'Услуги', // название меню
         ],
-        'description'         => '',
-        'public'              => true,
-            'exclude_from_search' => true,
-        
-        // 'capability_type'     => 'page',
-        'hierarchical' => true,
-        'show_in_menu'        => null, // показывать ли в меню адмнки
-        'show_in_rest'        => null, // добавить в REST API. C WP 4.7
-        'rest_base'           => null, // $post_type. C WP 4.7
-        'menu_position'       => null,
-        'menu_icon'           => 'dashicons-clipboard',
-        'supports'            => [
+        'description'            => '',
+        'public'                 => true,
+        // 'capability_type'     => 'page', // default 'post'
+        // 'hierarchical'        => true, // будут ли записи этого типа иметь древовидную структуру (как постоянные страницы), default 'false'
+        'menu_icon'              => 'dashicons-clipboard',
+        'supports'               => [
             'title',
             'editor',
-            //'excerpt',
-            //'trackbacks',
-            //'custom-fields',
-            //'comments',
+            // 'excerpt',
+            // 'trackbacks',
+            // 'custom-fields',
+            // 'comments',
             // 'revisions',
             // 'thumbnail',
             // 'author',
-            'page-attributes', # атрибуты страницы
+            // 'page-attributes', # атрибуты страницы
         ],
-        'has_archive'         => false,
-        'rewrite'             => true,
-        'query_var'           => true,
+        'has_archive'           => false,
+        'rewrite'               => true,
+        'query_var'             => true,
     ) );
 }
 add_action( 'init', 'services_taxonomies', 0 ); # Создаем новую таксономию для Услуг
