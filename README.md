@@ -67,7 +67,8 @@ function services_taxonomies(){
             'slug' => 'services',
             'hierarchical' => true
         ],
-        'public' => true
+        'public' => true,
+        'show_admin_column' => 'true',
     ));
 }
 ```
