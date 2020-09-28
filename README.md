@@ -68,7 +68,7 @@ function services_taxonomies(){
             'hierarchical' => true
         ],
         'public' => true,
-        'show_admin_column' => 'true',
+        'show_admin_column' => 'true', // авто-создание колонки таксы в таблице
     ));
 }
 ```
