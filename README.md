@@ -46,16 +46,16 @@ function register_post_type_services(){
 add_action( 'init', 'services_taxonomies', 0 ); # Создаем новую таксономию для Услуг
 function services_taxonomies(){
     $labels = array(
-        'name'              => 'Категории Услуг',
-        'singular_name'     => 'Категория услуги',
-        'search_items'      => 'Найти категорию услуг',
-        'all_items'         => 'Все категории услуг',
-        'parent_item'       => 'Родительская категория услуги',
+        'name'              => 'Категории',
+        'singular_name'     => 'Категория',
+        'search_items'      => 'Найти категорию',
+        'all_items'         => 'Все категории',
+        'parent_item'       => 'Родительская категория',
         'parent_item_colon' => 'Родительская категория',
         'edit_item'         => 'Родительская категория',
         'update_item'       => 'Обновить категорию',
         'add_new_item'      => 'Добавить новую категорию',
-        'new_item_name'     => 'Название новой категории услуги',
+        'new_item_name'     => 'Название новой категории',
         'menu_name'         => 'Категории',
     );
     register_taxonomy('services_categories', 'services', array(
