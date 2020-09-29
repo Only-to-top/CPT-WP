@@ -43,6 +43,8 @@ function register_post_type_services(){
         'query_var'             => true,
     ) );
 }
+
+// Таксономия категории
 add_action( 'init', 'services_taxonomies', 0 ); # Создаем новую таксономию для Услуг
 function services_taxonomies(){
     $labels = array(
@@ -59,12 +61,42 @@ function services_taxonomies(){
         'menu_name'         => 'Категории',
     );
     register_taxonomy('services_categories', 'services', array(
-        'hierarchical' => true,
+        'hierarchical' => true, // Категории
         'labels' => $labels,
         'show_ui' => true,
         'query_var' => true,
         'rewrite' => [
             'slug' => 'services',
+            'hierarchical' => true
+        ],
+        'public' => true,
+        'show_admin_column' => 'true', // авто-создание колонки таксы в таблице
+    ));
+}
+
+// Таксономия теги
+add_action( 'init', 'instructions_taxonomies_tags', 0 ); # Создаем новую таксономию для Услуг
+function instructions_taxonomies_tags(){
+    $labels = array(
+        'name'              => 'Теги',
+        'singular_name'     => 'Тег',
+        'search_items'      => 'Найти тег',
+        'all_items'         => 'Все категории',
+        'parent_item'       => 'Родительский тег',
+        'parent_item_colon' => 'Родительский тег',
+        'edit_item'         => 'Родительский тег',
+        'update_item'       => 'Обновить тег',
+        'add_new_item'      => 'Добавить новый тег',
+        'new_item_name'     => 'Название нового тега',
+        'menu_name'         => 'Теги',
+    );
+    register_taxonomy('instructions_tags', 'instructions', array(
+        'hierarchical' => false, // Метки
+        'labels' => $labels,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => [
+            'slug' => 'instructions',
             'hierarchical' => true
         ],
         'public' => true,
