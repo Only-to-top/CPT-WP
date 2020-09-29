@@ -45,8 +45,8 @@ function register_post_type_services(){
 }
 
 // Таксономия категории
-add_action( 'init', 'services_taxonomies', 0 ); # Создаем новую таксономию для Услуг
-function services_taxonomies(){
+add_action( 'init', 'services_taxonomies_cat', 0 ); # Создаем новую таксономию для Услуг
+function services_taxonomies_cat(){
     $labels = array(
         'name'              => 'Категории',
         'singular_name'     => 'Категория',
@@ -75,8 +75,8 @@ function services_taxonomies(){
 }
 
 // Таксономия теги
-add_action( 'init', 'instructions_taxonomies_tags', 0 ); # Создаем новую таксономию для Услуг
-function instructions_taxonomies_tags(){
+add_action( 'init', 'services_taxonomies_tags', 0 ); # Создаем новую таксономию для Услуг
+function services_taxonomies_tags(){
     $labels = array(
         'name'              => 'Теги',
         'singular_name'     => 'Тег',
@@ -90,7 +90,7 @@ function instructions_taxonomies_tags(){
         'new_item_name'     => 'Название нового тега',
         'menu_name'         => 'Теги',
     );
-    register_taxonomy('instructions_tags', 'instructions', array(
+    register_taxonomy('services_tags', 'services', array(
         'hierarchical' => false, // Метки
         'labels' => $labels,
         'show_ui' => true,
