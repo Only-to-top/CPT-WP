@@ -23,6 +23,7 @@ function register_post_type_services(){
         ],
         'description'            => '',
         'public'                 => true,
+        // 'exclude_from_search' => true, // будет исключен из запросов типа query_posts()
         // 'capability_type'     => 'page', // default 'post'
         // 'hierarchical'        => true, // будут ли записи этого типа иметь древовидную структуру (как постоянные страницы), default 'false'
         'menu_icon'              => 'dashicons-clipboard',
