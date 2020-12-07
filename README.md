@@ -98,7 +98,18 @@ function register_post_production()
         'show_in_admin_bar' => true,
         'menu_icon' => 'dashicons-testimonial',
         'hierarchical' => false,
-        'supports' => ['title'],
+        'supports'               => [
+            'title',
+            'editor',
+            // 'excerpt',
+            // 'trackbacks',
+            // 'custom-fields',
+            // 'comments',
+            // 'revisions',
+            // 'thumbnail',
+            // 'author',
+            // 'page-attributes', # атрибуты страницы
+        ],
         'has_archive' => 'stock',
         'rewrite' => array('slug' => 'stock/%production_categories%', 'with_front' => false, 'pages' => true, 'feeds' => false, 'feed' => false),
     ));
