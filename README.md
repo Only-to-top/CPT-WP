@@ -53,7 +53,7 @@ add_action('init', 'register_post_production');
 function register_post_production()
 {
     register_taxonomy('production_categories', ['production'], [
-        'label' => 'Категории акций',
+        'label' => 'Категории',
         'labels' => [
             'name' => 'Категории',
             'singular_name' => 'Категория',
@@ -96,22 +96,22 @@ function register_post_production()
         'show_in_nav_menus' => true,
         'show_in_menu' => true,
         'show_in_admin_bar' => true,
-        'menu_icon' => 'dashicons-testimonial',
+        'menu_icon' => 'dashicons-cart',
         'hierarchical' => false,
         'supports'               => [
             'title',
-            'editor',
+            // 'editor',
             // 'excerpt',
             // 'trackbacks',
             // 'custom-fields',
             // 'comments',
             // 'revisions',
-            // 'thumbnail',
+            'thumbnail',
             // 'author',
             // 'page-attributes', # атрибуты страницы
         ],
-        'has_archive' => 'stock',
-        'rewrite' => array('slug' => 'stock/%production_categories%', 'with_front' => false, 'pages' => true, 'feeds' => false, 'feed' => false),
+        'has_archive' => 'production',
+        'rewrite' => array('slug' => 'production/%production_categories%', 'with_front' => false, 'pages' => true, 'feeds' => false, 'feed' => false),
     ));
 }
 
