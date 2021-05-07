@@ -128,3 +128,88 @@ function production_permalink($permalink, $post)
     return str_replace('%production_categories%', $taxonomy_slug, $permalink);
 }
 ```
+
+### С категориями - услуги
+
+```php
+<?php
+
+add_action('init', 'register_post_service');
+function register_post_service()
+{
+    register_taxonomy('services_categories', ['services'], [
+        'label' => 'Категории',
+        'labels' => [
+            'name' => 'Категории',
+            'singular_name' => 'Категория',
+            'search_items' => 'Искать',
+            'all_items' => 'Все',
+            'view_item ' => 'Смотреть',
+            'edit_item' => 'Редактировать',
+            'update_item' => 'Обновить',
+            'add_new_item' => 'Добавить',
+            'new_item_name' => 'Новое',
+            'menu_name' => 'Категории',
+        ],
+        'description' => '',
+        'public' => true,
+        'show_ui' => true,
+        'show_admin_column' => 'true',
+        'show_in_quick_edit' => 'true',
+        'hierarchical' => true,
+        'rewrite' => array('slug' => 'services'),
+    ]);
+    register_post_type('services', array(
+        'label' => null,
+        'labels' => array(
+            'name' => 'Услуги',
+            'singular_name' => 'Услуга',
+            'add_new' => 'Добавить',
+            'add_new_item' => 'Добавление',
+            'edit_item' => 'Редактирование',
+            'new_item' => 'Новая',
+            'view_item' => 'Смотреть',
+            'search_items' => 'Искать',
+            'not_found' => 'Не найдено',
+            'not_found_in_trash' => 'Не найдено в корзине',
+            'parent_item_colon' => '',
+            'menu_name' => 'Услуги',
+        ),
+        'description' => '',
+        'public' => true,
+        'show_ui' => true,
+        'show_in_nav_menus' => true,
+        'show_in_menu' => true,
+        'show_in_admin_bar' => true,
+        'menu_icon' => 'dashicons-cart',
+        'hierarchical' => false,
+        'supports'               => [
+            'title',
+            // 'editor',
+            // 'excerpt',
+            // 'trackbacks',
+            // 'custom-fields',
+            // 'comments',
+            // 'revisions',
+            'thumbnail',
+            // 'author',
+            // 'page-attributes', # атрибуты страницы
+        ],
+        'has_archive' => 'services',
+        'rewrite' => array('slug' => 'services/%services_categories%', 'with_front' => false, 'pages' => true, 'feeds' => false, 'feed' => false),
+    ));
+}
+
+add_filter('post_type_link', 'services_permalink', 1, 2);
+function services_permalink($permalink, $post)
+{
+    if (strpos($permalink, '%services_categories%') === FALSE)
+        return $permalink;
+    $terms = get_the_terms($post, 'services_categories');
+    if (!is_wp_error($terms) && !empty($terms) && is_object($terms[0]))
+        $taxonomy_slug = $terms[0]->slug;
+    else
+        $taxonomy_slug = 'no_services_categories';
+    return str_replace('%services_categories%', $taxonomy_slug, $permalink);
+}
+```
