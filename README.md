@@ -127,6 +127,16 @@ function production_permalink($permalink, $post)
         $taxonomy_slug = 'no_production_categories';
     return str_replace('%production_categories%', $taxonomy_slug, $permalink);
 }
+
+# fix taxonomy pagination
+add_filter('pre_get_posts', 'tax_city_posts_per_page');
+function tax_city_posts_per_page($query)
+{
+    if (is_tax('production_categories')) {
+        $query->set('posts_per_page', 1);
+    }
+    return $query;
+}
 ```
 
 ### С категориями - услуги
