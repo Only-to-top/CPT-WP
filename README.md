@@ -39,7 +39,7 @@ function register_post_type_services(){
             // 'author',
             // 'page-attributes', # атрибуты страницы
         ],
-        'has_archive'           => false,
+        'has_archive'           => false, // исключить из sitemap
         'rewrite'               => true,
         'query_var'             => true,
     ) );
