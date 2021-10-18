@@ -223,3 +223,14 @@ function services_permalink($permalink, $post)
     return str_replace('%services_categories%', $taxonomy_slug, $permalink);
 }
 ```
+
+### Exclude a post type (Yoast Seo)
+
+```php
+# Exclude a post type (Yoast Seo)
+function sitemap_exclude_post_type_1($excluded, $post_type)
+{
+    return $post_type === 'team';
+}
+add_filter('wpseo_sitemap_exclude_post_type', 'sitemap_exclude_post_type_1', 10, 2);
+```
