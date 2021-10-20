@@ -1,5 +1,16 @@
 # Чтобы пагинация работала на страницах 2, 3, ... Слаг страницы не должен совпадать с post_type ! ! ! 
 
+## 
+
+```php
+add_filter('redirect_canonical', 'custom_disable_redirect_canonical');
+function custom_disable_redirect_canonical($redirect_url)
+{
+    if (is_singular('your_custom_post_type')) $redirect_url = false;
+    return $redirect_url;
+}
+```
+
 <h2>Создание нового типа записи а также таксономии</h2>
 
 ```php
