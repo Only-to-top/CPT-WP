@@ -33,8 +33,8 @@ function register_post_type_services(){
             'menu_name'          => 'Услуги', // название меню
         ],
         'description'            => '',
-        'public'                 => true,
-        // 'exclude_from_search' => true, // будет исключен из запросов типа query_posts()
+        'public'                 => true, // false - exclude
+        'has_archive'            => false, // исключить из sitemap
         // 'capability_type'     => 'page', // default 'post'
         // 'hierarchical'        => true, // будут ли записи этого типа иметь древовидную структуру (как постоянные страницы), default 'false'
         'menu_icon'              => 'dashicons-clipboard',
@@ -50,7 +50,6 @@ function register_post_type_services(){
             // 'author',
             // 'page-attributes', # атрибуты страницы
         ],
-        'has_archive'           => false, // исключить из sitemap
         'rewrite'               => true,
         'query_var'             => true,
     ) );
