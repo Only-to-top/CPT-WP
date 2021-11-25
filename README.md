@@ -14,10 +14,10 @@ function custom_disable_redirect_canonical($redirect_url)
 <h2>Создание нового типа записи а также таксономии</h2>
 
 ```php
-// New post type - Услуги
-add_action( 'init', 'register_post_type_services' );
-function register_post_type_services(){
-    register_post_type('services', array(
+// Услуга
+add_action( 'init', 'register_post_type_service' );
+function register_post_type_service(){
+    register_post_type('service', array(
         'label'  => null,
         'labels' => [
             'name'               => 'Услуги', // основное название для типа записи
