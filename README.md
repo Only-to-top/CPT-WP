@@ -38,6 +38,7 @@ function register_post_type_service(){
         // 'capability_type'     => 'page', // default 'post'
         // 'hierarchical'        => true, // будут ли записи этого типа иметь древовидную структуру (как постоянные страницы), default 'false'
         'menu_icon'              => 'dashicons-clipboard',
+        // 'show_in_rest'        => true, // true - использовать gutenberg, default - false
         'supports'               => [
             'title',
             'editor',
