@@ -52,6 +52,7 @@ function register_post_type_service(){
             // 'page-attributes', # атрибуты страницы
         ],
         'rewrite'               => true,
+        // 'rewrite'               => array('slug'=>'services', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
         'query_var'             => true,
     ) );
 }
