@@ -247,3 +247,16 @@ function sitemap_exclude_post_type_1($excluded, $post_type)
 }
 add_filter('wpseo_sitemap_exclude_post_type', 'sitemap_exclude_post_type_1', 10, 2);
 ```
+
+### Тип записи без страницы
+
+```php
+// exclude page url
+'public'                 => false,
+'publicly_queryable'     => true,
+'show_ui'                => true,
+'exclude_from_search'    => true,
+'show_in_nav_menus'      => false,
+'has_archive'            => false,
+'rewrite'                => false,
+```
