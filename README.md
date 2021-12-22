@@ -253,7 +253,8 @@ add_filter('wpseo_sitemap_exclude_post_type', 'sitemap_exclude_post_type_1', 10,
 ```php
 // exclude page url
 'public'                 => false,
-'publicly_queryable'     => true,
+'query_var'              => false,
+'publicly_queryable'     => false,
 'show_ui'                => true,
 'exclude_from_search'    => true,
 'show_in_nav_menus'      => false,
