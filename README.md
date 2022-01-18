@@ -34,7 +34,7 @@ function register_post_type_service(){
         ],
         'description'            => '',
         'public'                 => true, // false - exclude
-        'has_archive'            => false, // исключить из sitemap
+        'has_archive'            => true, // /post_type/post_name
         // 'capability_type'     => 'page', // default 'post'
         // 'hierarchical'        => true, // будут ли записи этого типа иметь древовидную структуру (как постоянные страницы), default 'false'
         'menu_icon'              => 'dashicons-clipboard',
